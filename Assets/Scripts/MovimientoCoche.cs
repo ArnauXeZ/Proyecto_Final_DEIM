@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class MovimientoCoche : MonoBehaviour
 {
-    public float velocidadMovimiento = 5f; // Ajusta la velocidad según sea necesario
+    //public float velocidadMovimiento = 5f;
+    public float aceleracion = 10f;
+    public float frenado = 10f;
+    public float velocidadMaxima = 10f;
+    public float inclinacionMaxima = 30f;
+    public float friccion = 5f;
+
+    private float velocidad;
 
     void Update()
     {
-        // Obtén la entrada de teclado para el movimiento lateral
         float movimientoHorizontal = Input.GetAxis("Horizontal");
 
-        // Calcula la posición actual del coche
-        Vector3 posicionActual = transform.position;
+        // Aceleración y movimiento lateral
+        velocidad += movimientoHorizontal * aceleracion * Time.deltaTime;
+        velocidad = Mathf.Clamp(velocidad, -velocidadMaxima, velocidadMaxima);
+        transform.Translate(Vector3.right * velocidad * Time.deltaTime);
 
-        // Calcula la nueva posición del coche con el movimiento lateral
-        float nuevaPosicionX = posicionActual.x + (movimientoHorizontal * velocidadMovimiento * Time.deltaTime);
+        // Frenado suave
+        if (movimientoHorizontal == 0)
+        {
+            float frenadoSuave = Mathf.Sign(velocidad) * frenado * Time.deltaTime;
+            velocidad -= frenadoSuave;
+        }
 
-        // Limita la posición del coche para que no se salga de la carretera
-        nuevaPosicionX = Mathf.Clamp(nuevaPosicionX, -7f, 5f); // Ajusta los límites según sea necesario
+        // Rotación del coche
+        float inclinacion = -movimientoHorizontal * inclinacionMaxima;
+        transform.rotation = Quaternion.Euler(0, 0, inclinacion);
 
-        // Asigna la nueva posición al coche
-        transform.position = new Vector3(nuevaPosicionX, posicionActual.y, posicionActual.z);
+        // Simulación de fricción
+        velocidad *= Mathf.Pow(1 - friccion * Time.deltaTime, 2);
+
     }
 }
