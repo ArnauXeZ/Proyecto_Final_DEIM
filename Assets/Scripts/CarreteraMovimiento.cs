@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarreteraMovimiento : MonoBehaviour
 {
     public float velocidad = 5f;
+    public GameObject cochePrefab; // Arrastra el prefab del coche en sentido contrario aquí
 
     void Update()
     {
@@ -15,6 +16,7 @@ public class CarreteraMovimiento : MonoBehaviour
         if (transform.position.z < -80f)
         {
             RepositionarCarretera();
+            GenerarCocheContrario();
         }
     }
 
@@ -25,7 +27,14 @@ public class CarreteraMovimiento : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + longitudCarretera);
     }
 
-    // Nuevo método para obtener la velocidad de la carretera
+    void GenerarCocheContrario()
+    {
+        // Genera un coche en sentido contrario en una posición aleatoria
+        Vector3 posicionCoche = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 80f);
+        Instantiate(cochePrefab, posicionCoche, Quaternion.identity);
+    }
+
+    // Asegúrate de tener este método en tu script CarreteraMovimiento
     public float ObtenerVelocidadCarretera()
     {
         return velocidad;
