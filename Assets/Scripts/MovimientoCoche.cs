@@ -26,6 +26,12 @@ public class MovimientoCoche : MonoBehaviour
         velocidad = Mathf.Clamp(velocidad, -velocidadMaxima, velocidadMaxima);
         transform.Translate(Vector3.right * velocidad * Time.deltaTime);
 
+        // Restringe la posición lateral del coche para evitar salir del mapa
+        float nuevaPosicionX = Mathf.Clamp(transform.position.x, -7f, 5f);
+        transform.position = new Vector3(nuevaPosicionX, transform.position.y, transform.position.z);
+
+        transform.Translate(Vector3.right * velocidad * Time.deltaTime);
+
         // Frenado suave
         if (movimientoHorizontal == 0)
         {
@@ -56,4 +62,5 @@ public class MovimientoCoche : MonoBehaviour
         ruedaTraseraIzquierda.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
         ruedaTraseraDerecha.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
     }
+
 }
