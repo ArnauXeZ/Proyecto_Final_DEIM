@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CarreteraMovimiento : MonoBehaviour
 {
-    public float velocidad = 5f;
-    public GameObject cochePrefab; // Arrastra el prefab del coche en sentido contrario aquí
+    public float velocidadBase = 5f;
+    public GameObject cochePrefab;
+    private float temporizador = 0f;
 
     void Update()
     {
         // Mueve la carretera hacia atrás
-        transform.Translate(Vector3.back * velocidad * Time.deltaTime);
+        transform.Translate(Vector3.back * ObtenerVelocidadCarretera() * Time.deltaTime);
+
+        // Incrementa el temporizador
+        temporizador += Time.deltaTime;
 
         // Si la carretera ha pasado cierta posición, reposiciónala para crear el bucle
         if (transform.position.z < -80f)
@@ -31,12 +35,13 @@ public class CarreteraMovimiento : MonoBehaviour
     {
         // Genera un coche en sentido contrario en una posición aleatoria
         Vector3 posicionCoche = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 80f);
-        Instantiate(cochePrefab, posicionCoche, Quaternion.identity);
+        GameObject cocheContrario = Instantiate(cochePrefab, posicionCoche, Quaternion.identity);
+        cocheContrario.GetComponent<MovimientoCocheContrario>().ConfigurarVelocidad(ObtenerVelocidadCarretera());
     }
 
-    // Asegúrate de tener este método en tu script CarreteraMovimiento
     public float ObtenerVelocidadCarretera()
     {
-        return velocidad;
+        // Incrementa la velocidad base en función del tiempo
+        return velocidadBase + temporizador * 2.5f;
     }
 }

@@ -63,4 +63,13 @@ public class MovimientoCoche : MonoBehaviour
         ruedaTraseraDerecha.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
     }
 
+    // Maneja las colisiones con los coches en sentido contrario
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "CocheContrario")
+        {
+            // Detener el tiempo al colisionar con un coche en sentido contrario
+            Time.timeScale = 0f;
+        }
+    }
 }

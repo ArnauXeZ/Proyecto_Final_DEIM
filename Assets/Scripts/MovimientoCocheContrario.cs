@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoCocheContrario : MonoBehaviour
 {
-    public float velocidad = 5f;
+    private float velocidad;
 
     void Update()
     {
@@ -16,5 +16,11 @@ public class MovimientoCocheContrario : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // Configura la velocidad del coche contrario
+    public void ConfigurarVelocidad(float velocidadCarretera)
+    {
+        velocidad = velocidadCarretera * 1.5f; // Ajusta el multiplicador según sea necesario
     }
 }
