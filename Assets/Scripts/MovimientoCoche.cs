@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MovimientoCoche : MonoBehaviour
 {
-    //public float velocidadMovimiento = 5f;
-    public float aceleracion = 10f;
+    public float aceleracion = 20f;
     public float frenado = 10f;
     public float velocidadMaxima = 10f;
     public float inclinacionMaxima = 30f;
     public float friccion = 5f;
+    public Transform ruedaDelanteraIzquierda;
+    public Transform ruedaDelanteraDerecha;
+    public Transform ruedaTraseraIzquierda;
+    public Transform ruedaTraseraDerecha;
+    public GameObject carretera; // Arrastra el objeto de la carretera aquí
 
     private float velocidad;
 
@@ -36,5 +40,20 @@ public class MovimientoCoche : MonoBehaviour
         // Simulación de fricción
         velocidad *= Mathf.Pow(1 - friccion * Time.deltaTime, 2);
 
+        // Rotación de las ruedas basada en la velocidad de la carretera
+        RotarRuedas();
+    }
+
+    void RotarRuedas()
+    {
+        float rotacionRuedas = carretera.GetComponent<CarreteraMovimiento>().ObtenerVelocidadCarretera() * 20f;
+
+        // Rotar las ruedas delanteras
+        ruedaDelanteraIzquierda.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
+        ruedaDelanteraDerecha.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
+
+        // Rotar las ruedas traseras
+        ruedaTraseraIzquierda.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
+        ruedaTraseraDerecha.Rotate(Vector3.right, rotacionRuedas * Time.deltaTime);
     }
 }

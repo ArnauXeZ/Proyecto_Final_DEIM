@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarreteraMovimiento : MonoBehaviour
 {
-    public float velocidad = 5f; // Ajusta la velocidad según sea necesario
+    public float velocidad = 5f;
 
     void Update()
     {
@@ -23,5 +23,11 @@ public class CarreteraMovimiento : MonoBehaviour
         // Calcula la nueva posición de la carretera para reposicionarla
         float longitudCarretera = 80f; // Ajusta según la longitud de tu carretera
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + longitudCarretera);
+    }
+
+    // Nuevo método para obtener la velocidad de la carretera
+    public float ObtenerVelocidadCarretera()
+    {
+        return velocidad;
     }
 }
