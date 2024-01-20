@@ -72,4 +72,5 @@ public class MovimientoCoche : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
+
 }

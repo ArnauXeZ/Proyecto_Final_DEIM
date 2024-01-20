@@ -21,6 +21,6 @@ public class MovimientoCocheContrario : MonoBehaviour
     // Configura la velocidad del coche contrario
     public void ConfigurarVelocidad(float velocidadCarretera)
     {
-        velocidad = velocidadCarretera * 1.5f; // Ajusta el multiplicador según sea necesario
+        velocidad = velocidadCarretera * 1f; // Ajusta el multiplicador según sea necesario
     }
 }
