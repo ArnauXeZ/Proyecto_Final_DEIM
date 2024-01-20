@@ -21,6 +21,6 @@ public class MovimientoAmbulanciaContraria : MonoBehaviour
     // Configura la velocidad de la ambulancia
     public void ConfigurarVelocidad(float velocidadCarretera)
     {
-        velocidad = velocidadCarretera * 1f; // Ajusta el factor de velocidad según tus necesidades
+        velocidad = velocidadCarretera * 1.5f; // Ajusta el factor de velocidad según tus necesidades
     }
 }

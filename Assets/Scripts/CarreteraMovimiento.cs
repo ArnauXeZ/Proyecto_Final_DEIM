@@ -33,6 +33,9 @@ public class CarreteraMovimiento : MonoBehaviour
         // Calcula la nueva posición de la carretera para reposicionarla
         float longitudCarretera = 80f; // Ajusta según la longitud de tu carretera
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + longitudCarretera);
+
+        // Genera una ambulancia cada vez que la carretera se reposiciona
+        GenerarAmbulanciaContraria();
     }
 
     void GenerarCocheContrario()
