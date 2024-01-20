@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CocheContrario
+  - Ambulancia
+  - CocheJugador
+  - SliderController
   layers:
   - Default
   - TransparentFX

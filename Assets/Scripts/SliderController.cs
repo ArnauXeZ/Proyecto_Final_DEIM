@@ -30,5 +30,13 @@ public class SliderController : MonoBehaviour
             // Puedes agregar aquí cualquier acción adicional cuando el tiempo llega a cero
         }
     }
+    
+    // Método para aumentar el tiempo restante
+    public void AumentarTiempo(float cantidad)
+    {
+        tiempoRestante += cantidad;
+        tiempoRestante = Mathf.Clamp(tiempoRestante, 0f, tiempoTotal); // Asegura que no exceda el tiempo total
+        tiempoSlider.value = tiempoRestante;
+    }
 }
 

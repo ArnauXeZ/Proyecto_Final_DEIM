@@ -45,7 +45,23 @@ public class CarreteraMovimiento : MonoBehaviour
         // Genera un coche en sentido contrario en una posición aleatoria
         Vector3 posicionCoche = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 80f);
         GameObject cocheContrario = Instantiate(cochePrefab, posicionCoche, Quaternion.identity);
+
+        // Configura la referencia al slider en el script MovimientoCoche
         cocheContrario.GetComponent<MovimientoCocheContrario>().ConfigurarVelocidad(ObtenerVelocidadCarretera());
+
+        // Guarda una referencia al script MovimientoCoche
+        MovimientoCoche movimientoCoche = cocheContrario.GetComponent<MovimientoCoche>();
+
+        /* Asegúrate de que el cocheContrario tenga el componente MovimientoCoche
+        if (movimientoCoche != null)
+        {
+            // Configura la referencia al slider en el script MovimientoCoche
+            movimientoCoche.ConfigurarSlider(barraSlider);
+        }
+        else
+        {
+            Debug.LogError("El objeto cocheContrario no tiene el componente MovimientoCoche.");
+        }*/
 
     }
 
@@ -55,7 +71,13 @@ public class CarreteraMovimiento : MonoBehaviour
         Debug.Log("Generando ambulancia...");
         Vector3 posicionAmbulancia = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 70f);
         GameObject ambulanciaContraria = Instantiate(ambulanciaPrefab, posicionAmbulancia, Quaternion.identity);
-        ambulanciaContraria.GetComponent<MovimientoAmbulanciaContraria>().ConfigurarVelocidad(ObtenerVelocidadCarretera());
+
+        // Obtén la referencia al script MovimientoAmbulanciaContraria
+        MovimientoAmbulanciaContraria movimientoAmbulancia = ambulanciaContraria.GetComponent<MovimientoAmbulanciaContraria>();
+
+        // Configura la velocidad y pasa la referencia del slider al script MovimientoAmbulanciaContraria
+        movimientoAmbulancia.ConfigurarVelocidad(ObtenerVelocidadCarretera());
+        movimientoAmbulancia.ConfigurarSlider(barraSlider);
     }
 
 
@@ -64,4 +86,13 @@ public class CarreteraMovimiento : MonoBehaviour
         // Incrementa la velocidad base en función del tiempo
         return velocidadBase + temporizador * 1f;
     }
+
+    /* void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ambulancia"))
+        {
+            // No detenemos el tiempo aquí, sino que simplemente incrementamos la barra del slider
+            barraSlider.value += 10;
+        }
+    }*/
 }

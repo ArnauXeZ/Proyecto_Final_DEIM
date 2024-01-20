@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovimientoCocheContrario : MonoBehaviour
 {
@@ -24,3 +25,4 @@ public class MovimientoCocheContrario : MonoBehaviour
         velocidad = velocidadCarretera * 1f; // Ajusta el multiplicador según sea necesario
     }
 }
+

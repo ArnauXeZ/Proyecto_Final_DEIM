@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MovimientoCoche : MonoBehaviour
 {
@@ -14,8 +15,24 @@ public class MovimientoCoche : MonoBehaviour
     public Transform ruedaTraseraIzquierda;
     public Transform ruedaTraseraDerecha;
     public GameObject carretera; // Arrastra el objeto de la carretera aquí
-
+    public Slider barraSlider;
+    public SliderController sliderController;
     private float velocidad;
+
+    void Start()
+    {
+        // Encuentra el objeto que tiene el script SliderController
+        GameObject sliderControllerObject = GameObject.FindWithTag("SliderController");
+
+        // Obtén la referencia al script SliderController
+        sliderController = sliderControllerObject.GetComponent<SliderController>();
+
+        // Verifica si la referencia es nula
+        if (sliderController == null)
+        {
+            Debug.LogError("No se encontró el script SliderController en el objeto con la etiqueta 'SliderController'.");
+        }
+    }
 
     void Update()
     {
@@ -50,6 +67,11 @@ public class MovimientoCoche : MonoBehaviour
         RotarRuedas();
     }
 
+    public void ConfigurarSlider(Slider slider)
+    {
+        barraSlider = slider;
+    }
+
     void RotarRuedas()
     {
         float rotacionRuedas = carretera.GetComponent<CarreteraMovimiento>().ObtenerVelocidadCarretera() * 20f;
@@ -73,4 +95,12 @@ public class MovimientoCoche : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ambulancia"))
+        {
+            // Aumenta el tiempo al colisionar con una ambulancia
+            sliderController.AumentarTiempo(5f); // Ajusta la cantidad según sea necesario
+        }
+    }
 }
