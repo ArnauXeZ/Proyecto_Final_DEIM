@@ -18,6 +18,7 @@ public class MovimientoCoche : MonoBehaviour
     public Slider barraSlider;
     public SliderController sliderController;
     private float velocidad;
+    public ParticleSystem efectoColisionAmbulancia;
 
     void Start()
     {
@@ -31,6 +32,12 @@ public class MovimientoCoche : MonoBehaviour
         if (sliderController == null)
         {
             Debug.LogError("No se encontró el script SliderController en el objeto con la etiqueta 'SliderController'.");
+        }
+
+        // Asegúrate de que el sistema de partículas esté encendido al inicio
+        if (efectoColisionAmbulancia != null)
+        {
+            efectoColisionAmbulancia.Play();
         }
     }
 
@@ -97,10 +104,16 @@ public class MovimientoCoche : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Ambulancia"))
         {
             // Aumenta el tiempo al colisionar con una ambulancia
             sliderController.AumentarTiempo(5f); // Ajusta la cantidad según sea necesario
+           
+            if (efectoColisionAmbulancia != null)
+            {
+                efectoColisionAmbulancia.Play();
+            }
             // Destruye la ambulancia al colisionar
             Destroy(other.gameObject);
         }
