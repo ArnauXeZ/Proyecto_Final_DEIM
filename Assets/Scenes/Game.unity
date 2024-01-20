@@ -3123,6 +3123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidadBase: 15
   cochePrefab: {fileID: 100010, guid: a7b60e70606f80245b2f8bc7ce2fadb6, type: 3}
+  ambulanciaPrefab: {fileID: 100010, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
 --- !u!1 &651556220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,8 +5797,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.8558708, y: 1.555716, z: 4.4698257}
-  m_Center: {x: 0.008832872, y: -0.20852435, z: 0.0039405823}
+  m_Size: {x: 1.7269292, y: 1.3711513, z: 4.2516174}
+  m_Center: {x: -0.025882125, y: -0.11624211, z: -0.035736084}
 --- !u!54 &1260676034
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8276,12 +8277,12 @@ PrefabInstance:
     - target: {fileID: 3804763580995693398, guid: 84365073985f8be44ba9814dbf4f7659,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 3804763580995693398, guid: 84365073985f8be44ba9814dbf4f7659,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -67
+      value: -65.59
       objectReference: {fileID: 0}
     - target: {fileID: 3804763580995693398, guid: 84365073985f8be44ba9814dbf4f7659,
         type: 3}

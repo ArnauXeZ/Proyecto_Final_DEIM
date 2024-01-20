@@ -6,10 +6,13 @@ public class CarreteraMovimiento : MonoBehaviour
 {
     public float velocidadBase = 5f;
     public GameObject cochePrefab;
+    public GameObject ambulanciaPrefab;
     private float temporizador = 0f;
 
     void Update()
     {
+        //Debug.Log("Update de CarreteraMovimiento");
+
         // Mueve la carretera hacia atrás
         transform.Translate(Vector3.back * ObtenerVelocidadCarretera() * Time.deltaTime);
 
@@ -22,6 +25,7 @@ public class CarreteraMovimiento : MonoBehaviour
             RepositionarCarretera();
             GenerarCocheContrario();
         }
+
     }
 
     void RepositionarCarretera()
@@ -37,7 +41,18 @@ public class CarreteraMovimiento : MonoBehaviour
         Vector3 posicionCoche = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 80f);
         GameObject cocheContrario = Instantiate(cochePrefab, posicionCoche, Quaternion.identity);
         cocheContrario.GetComponent<MovimientoCocheContrario>().ConfigurarVelocidad(ObtenerVelocidadCarretera());
+
     }
+
+    void GenerarAmbulanciaContraria()
+    {
+        // Genera una ambulancia en sentido contrario en una posición aleatoria
+        Debug.Log("Generando ambulancia...");
+        Vector3 posicionAmbulancia = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 70f);
+        GameObject ambulanciaContraria = Instantiate(ambulanciaPrefab, posicionAmbulancia, Quaternion.identity);
+        ambulanciaContraria.GetComponent<MovimientoAmbulanciaContraria>().ConfigurarVelocidad(ObtenerVelocidadCarretera());
+    }
+
 
     public float ObtenerVelocidadCarretera()
     {
