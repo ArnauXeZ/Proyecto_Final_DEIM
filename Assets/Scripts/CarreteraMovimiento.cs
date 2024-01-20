@@ -13,7 +13,6 @@ public class CarreteraMovimiento : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log("Update de CarreteraMovimiento");
 
         // Mueve la carretera hacia atrás
         transform.Translate(Vector3.back * ObtenerVelocidadCarretera() * Time.deltaTime);
@@ -26,6 +25,7 @@ public class CarreteraMovimiento : MonoBehaviour
         {
             RepositionarCarretera();
             GenerarCocheContrario();
+            GenerarAmbulanciaContraria();
         }
 
     }
@@ -37,7 +37,6 @@ public class CarreteraMovimiento : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + longitudCarretera);
 
         // Genera una ambulancia cada vez que la carretera se reposiciona
-        GenerarAmbulanciaContraria();
     }
 
     void GenerarCocheContrario()
@@ -52,16 +51,6 @@ public class CarreteraMovimiento : MonoBehaviour
         // Guarda una referencia al script MovimientoCoche
         MovimientoCoche movimientoCoche = cocheContrario.GetComponent<MovimientoCoche>();
 
-        /* Asegúrate de que el cocheContrario tenga el componente MovimientoCoche
-        if (movimientoCoche != null)
-        {
-            // Configura la referencia al slider en el script MovimientoCoche
-            movimientoCoche.ConfigurarSlider(barraSlider);
-        }
-        else
-        {
-            Debug.LogError("El objeto cocheContrario no tiene el componente MovimientoCoche.");
-        }*/
 
     }
 
@@ -87,12 +76,4 @@ public class CarreteraMovimiento : MonoBehaviour
         return velocidadBase + temporizador * 1f;
     }
 
-    /* void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ambulancia"))
-        {
-            // No detenemos el tiempo aquí, sino que simplemente incrementamos la barra del slider
-            barraSlider.value += 10;
-        }
-    }*/
 }

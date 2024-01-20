@@ -34,11 +34,7 @@ public class MovimientoCoche : MonoBehaviour
             Debug.LogError("No se encontró el script SliderController en el objeto con la etiqueta 'SliderController'.");
         }
 
-        // Asegúrate de que el sistema de partículas esté encendido al inicio
-        if (efectoColisionAmbulancia != null)
-        {
-            efectoColisionAmbulancia.Play();
-        }
+       
     }
 
     void Update()
