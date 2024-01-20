@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarreteraMovimiento : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CarreteraMovimiento : MonoBehaviour
     public GameObject cochePrefab;
     public GameObject ambulanciaPrefab;
     private float temporizador = 0f;
+    public Slider barraSlider;
 
     void Update()
     {
