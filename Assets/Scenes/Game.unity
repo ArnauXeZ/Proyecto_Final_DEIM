@@ -1688,7 +1688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoSlider: {fileID: 370005947}
-  tiempoTotal: 100
+  tiempoTotal: 30
 --- !u!114 &370005947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8690,6 +8690,11 @@ PrefabInstance:
       propertyPath: barraSlider
       value: 
       objectReference: {fileID: 370005947}
+    - target: {fileID: 3539548698409337601, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: sliderController
+      value: 
+      objectReference: {fileID: 370005946}
     - target: {fileID: 7657205477522760294, guid: a39ace4ad51671445bd5c142a311deb4,
         type: 3}
       propertyPath: m_LocalPosition.x

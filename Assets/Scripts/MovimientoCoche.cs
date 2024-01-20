@@ -101,6 +101,8 @@ public class MovimientoCoche : MonoBehaviour
         {
             // Aumenta el tiempo al colisionar con una ambulancia
             sliderController.AumentarTiempo(5f); // Ajusta la cantidad según sea necesario
+            // Destruye la ambulancia al colisionar
+            Destroy(other.gameObject);
         }
     }
 }
