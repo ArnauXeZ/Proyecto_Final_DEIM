@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.045067232, g: 0.08345149, b: 0.15232004, a: 1}
+  m_IndirectSpecularColor: {r: 0.045063324, g: 0.08345341, b: 0.15228686, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5656,7 +5656,7 @@ MonoBehaviour:
   cochePrefab: {fileID: 100010, guid: a7b60e70606f80245b2f8bc7ce2fadb6, type: 3}
   ambulanciaPrefab: {fileID: 1215395421967941289, guid: 3028bdafdc13c1c4a911990395bbbce8,
     type: 3}
-  autobusPrefab: {fileID: 100000, guid: 79ef5961b86276943ab5da38ae9f2e4b, type: 3}
+  autobusPrefab: {fileID: 100010, guid: fba5e236738a7c940b3a8d031c307794, type: 3}
   barraSlider: {fileID: 370005947}
 --- !u!1 &649344347 stripped
 GameObject:
