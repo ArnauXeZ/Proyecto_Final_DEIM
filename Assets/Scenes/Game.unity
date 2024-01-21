@@ -2935,13 +2935,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09249722, y: -0, z: -0, w: 0.995713}
-  m_LocalPosition: {x: -0.9, y: 4.9, z: -73.14}
+  m_LocalRotation: {x: 0.27130157, y: -0, z: -0, w: 0.96249443}
+  m_LocalPosition: {x: -0.9, y: 5.75, z: -70.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 10.615, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.483, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3476,7 +3476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -309.94, y: 207}
+  m_AnchoredPosition: {x: -335, y: 227}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370005946
@@ -4753,7 +4753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362, y: 214}
+  m_AnchoredPosition: {x: 370, y: 229}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &571812937
@@ -5642,6 +5642,7 @@ MonoBehaviour:
   cochePrefab: {fileID: 100010, guid: a7b60e70606f80245b2f8bc7ce2fadb6, type: 3}
   ambulanciaPrefab: {fileID: 1215395421967941289, guid: 3028bdafdc13c1c4a911990395bbbce8,
     type: 3}
+  autobusPrefab: {fileID: 100000, guid: 79ef5961b86276943ab5da38ae9f2e4b, type: 3}
   barraSlider: {fileID: 370005947}
 --- !u!1 &649344347 stripped
 GameObject:
@@ -9098,6 +9099,11 @@ PrefabInstance:
       propertyPath: cameraShake.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 779705637047399056, guid: 87ee7299dd44ed747af24dbb91bcd33b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b,
         type: 3}
       propertyPath: m_Name
@@ -9107,6 +9113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271093393614929224, guid: 87ee7299dd44ed747af24dbb91bcd33b,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4271093393614929224, guid: 87ee7299dd44ed747af24dbb91bcd33b,
         type: 3}
@@ -16331,6 +16342,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7170564937312440349, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.126841
+      objectReference: {fileID: 0}
+    - target: {fileID: -7170564937312440349, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.61155397
+      objectReference: {fileID: 0}
+    - target: {fileID: -7170564937312440349, guid: a39ace4ad51671445bd5c142a311deb4,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.10457349
+      objectReference: {fileID: 0}
     - target: {fileID: 3539548698409337601, guid: a39ace4ad51671445bd5c142a311deb4,
         type: 3}
       propertyPath: carretera
@@ -16364,7 +16390,7 @@ PrefabInstance:
     - target: {fileID: 7657205477522760294, guid: a39ace4ad51671445bd5c142a311deb4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -64.32
+      value: -63.04
       objectReference: {fileID: 0}
     - target: {fileID: 7657205477522760294, guid: a39ace4ad51671445bd5c142a311deb4,
         type: 3}

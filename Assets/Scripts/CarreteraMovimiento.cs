@@ -8,6 +8,7 @@ public class CarreteraMovimiento : MonoBehaviour
     public float velocidadBase = 5f;
     public GameObject cochePrefab;
     public GameObject ambulanciaPrefab;
+    public GameObject autobusPrefab;
     private float temporizador = 0f;
     public Slider barraSlider;
 
@@ -26,6 +27,7 @@ public class CarreteraMovimiento : MonoBehaviour
             RepositionarCarretera();
             GenerarCocheContrario();
             GenerarAmbulanciaContraria();
+            GenerarAutobusContrario();
         }
 
     }
@@ -39,10 +41,18 @@ public class CarreteraMovimiento : MonoBehaviour
         // Genera una ambulancia cada vez que la carretera se reposiciona
     }
 
+    void GenerarAutobusContrario()
+    {
+        // Genera un autobús en sentido contrario en una posición aleatoria
+        Vector3 posicionAutobus = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 150f);
+        GameObject autobusContrario = Instantiate(autobusPrefab, posicionAutobus, Quaternion.identity);
+        autobusContrario.GetComponent<MovimientoAutobusContrario>().ConfigurarVelocidad(ObtenerVelocidadCarretera());
+    }
+
     void GenerarCocheContrario()
     {
         // Genera un coche en sentido contrario en una posición aleatoria
-        Vector3 posicionCoche = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 80f);
+        Vector3 posicionCoche = new Vector3(Random.Range(-5f, 5f), 1f, transform.position.z + 100f);
         GameObject cocheContrario = Instantiate(cochePrefab, posicionCoche, Quaternion.identity);
 
         // Configura la referencia al slider en el script MovimientoCoche
@@ -58,7 +68,7 @@ public class CarreteraMovimiento : MonoBehaviour
     {
         // Genera una ambulancia en sentido contrario en una posición aleatoria
         Debug.Log("Generando ambulancia...");
-        Vector3 posicionAmbulancia = new Vector3(Random.Range(-5f, 5f), 0.5f, transform.position.z + 70f);
+        Vector3 posicionAmbulancia = new Vector3(Random.Range(-5f, 5f), 0.5f, transform.position.z + 90f);
         GameObject ambulanciaContraria = Instantiate(ambulanciaPrefab, posicionAmbulancia, Quaternion.identity);
 
         // Obtén la referencia al script MovimientoAmbulanciaContraria

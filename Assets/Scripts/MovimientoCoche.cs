@@ -94,7 +94,8 @@ public class MovimientoCoche : MonoBehaviour
         if (collision.gameObject.tag == "CocheContrario")
         {
             // Detener el tiempo al colisionar con un coche en sentido contrario
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; 
+            //poSAR UN BOOL IS DEAD a on hi ha s'update, que ho englobi tot perquè aqueí, en lloc de posar time.deltatime = 0 posis que es bool aquest sigui true, així es temps seguirà corrent
         }
     }
 
