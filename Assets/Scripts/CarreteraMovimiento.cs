@@ -67,8 +67,7 @@ public class CarreteraMovimiento : MonoBehaviour
     void GenerarAmbulanciaContraria()
     {
         // Genera una ambulancia en sentido contrario en una posición aleatoria
-        Debug.Log("Generando ambulancia...");
-        Vector3 posicionAmbulancia = new Vector3(Random.Range(-5f, 5f), 0.5f, transform.position.z + 90f);
+        Vector3 posicionAmbulancia = new Vector3(Random.Range(-5f, 5f), 0.5f, transform.position.z + 70f);
         GameObject ambulanciaContraria = Instantiate(ambulanciaPrefab, posicionAmbulancia, Quaternion.identity);
 
         // Obtén la referencia al script MovimientoAmbulanciaContraria
