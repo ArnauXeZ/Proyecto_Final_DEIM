@@ -11,6 +11,7 @@ public class CarreteraMovimiento : MonoBehaviour
     public GameObject autobusPrefab;
     private float temporizador = 0f;
     public Slider barraSlider;
+    public MenuPausa menuPausaScript;  // Asegúrate de asignar esta referencia desde el inspector
 
     void Update()
     {
@@ -28,6 +29,13 @@ public class CarreteraMovimiento : MonoBehaviour
             GenerarCocheContrario();
             GenerarAmbulanciaContraria();
             GenerarAutobusContrario();
+        }
+
+        // Verifica si se presiona la tecla ESC
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Llama al método ToggleMenuPausa del script MenuPausa
+            menuPausaScript.ToggleMenuPausa();
         }
 
     }
