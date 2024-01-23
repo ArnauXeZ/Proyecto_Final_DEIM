@@ -9,18 +9,26 @@ public class MenuPausa : MonoBehaviour
     void Update()
     {
         // Detecta si se presiona la tecla ESC o el botón "Options" en el controlador de PS4
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("joystick button 9"))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Options"))
         {
-            ToggleMenuPausa();
+            // Llama a la función que maneja la pausa
+            ManejarPausa();
         }
     }
 
-    public void ToggleMenuPausa()
+    void ManejarPausa()
     {
-        // Activa o desactiva el menú de pausa
-        menuPausa.SetActive(!menuPausa.activeSelf);
-
-        // Pausa o reanuda el tiempo del juego
-        Time.timeScale = (menuPausa.activeSelf) ? 0f : 1f;
+        // Si el menú de pausa está activo, lo desactiva y reanuda el tiempo
+        if (menuPausa.activeSelf)
+        {
+            menuPausa.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            // Si el menú de pausa está inactivo, lo activa y pausa el tiempo
+            menuPausa.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }

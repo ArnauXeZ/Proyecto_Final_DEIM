@@ -20,8 +20,8 @@ RenderSettings:
   m_FogDensity: 0.0028
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.87694985, g: 0.45407286, b: 0.027729642, a: 1}
-  m_AmbientEquatorColor: {r: 0.87694985, g: 0.45407286, b: 0.027729642, a: 1}
+  m_AmbientSkyColor: {r: 0.5634765, g: 0.8710796, b: 1, a: 1}
+  m_AmbientEquatorColor: {r: 0.5634765, g: 0.8710796, b: 1, a: 1}
   m_AmbientGroundColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
@@ -3798,7 +3798,7 @@ RectTransform:
   m_GameObject: {fileID: 370005944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.293849, y: 2.4027417, z: 2.4027417}
+  m_LocalScale: {x: 1.1990867, y: 1.2560092, z: 1.2560092}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 536522543}
@@ -3808,7 +3808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -730, y: 484}
+  m_AnchoredPosition: {x: -428, y: 264}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370005946
@@ -3909,8 +3909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 376991887}
-  timeOfDay: 17
-  sunRotationSpeed: 0.2
+  timeOfDay: 11
+  sunRotationSpeed: 0.8
   skyColor:
     serializedVersion: 2
     key0: {r: 0, g: 0, b: 0, a: 1}
@@ -4035,7 +4035,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.6871417, b: 0.2544031, a: 1}
+  m_Color: {r: 1, g: 0.9343773, b: 0.8443005, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -4094,7 +4094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376991884}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.9914449, y: 0, z: 0, w: 0.13052626}
+  m_LocalRotation: {x: 0.6087614, y: 0, z: 0, w: 0.7933533}
   m_LocalPosition: {x: 1.782443, y: 1.8574584, z: -64.79167}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4484,7 +4484,6 @@ GameObject:
   - component: {fileID: 456279280}
   - component: {fileID: 456279283}
   - component: {fileID: 456279282}
-  - component: {fileID: 456279281}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -4512,19 +4511,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &456279281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456279279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01852a453378cb342abb00b68331c4f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPausa: {fileID: 456279279}
 --- !u!114 &456279282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5286,14 +5272,14 @@ RectTransform:
   m_GameObject: {fileID: 568252074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5481, y: 1.5481, z: 1.5481}
+  m_LocalScale: {x: 1.1923622, y: 1.1923622, z: 1.1923622}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 255488532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 815, y: 489}
+  m_AnchoredPosition: {x: 413, y: 264}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &571812937
@@ -5917,6 +5903,7 @@ GameObject:
   - component: {fileID: 647801945}
   - component: {fileID: 647801946}
   - component: {fileID: 647801947}
+  - component: {fileID: 647801948}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -6185,7 +6172,6 @@ MonoBehaviour:
     type: 3}
   autobusPrefab: {fileID: 100010, guid: fba5e236738a7c940b3a8d031c307794, type: 3}
   barraSlider: {fileID: 370005947}
-  menuPausaScript: {fileID: 456279281}
 --- !u!114 &647801947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6199,6 +6185,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lights: {fileID: 889073452}
+--- !u!114 &647801948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647801944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01852a453378cb342abb00b68331c4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPausa: {fileID: 456279279}
 --- !u!1 &649344347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689,
@@ -12890,7 +12889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: 331}
+  m_AnchoredPosition: {x: 84, y: 88}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1486216865
