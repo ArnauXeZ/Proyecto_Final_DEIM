@@ -12,6 +12,12 @@ public class CarreteraMovimiento : MonoBehaviour
     private float temporizador = 0f;
     public Slider barraSlider;
 
+    void Awake()
+    {
+        // Establecer el time scale en 1 al iniciar la escena
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
 

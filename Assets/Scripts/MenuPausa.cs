@@ -6,6 +6,7 @@ public class MenuPausa : MonoBehaviour
 {
     public GameObject menuPausa;
 
+
     void Update()
     {
         // Detecta si se presiona la tecla ESC o el botón "Options" en el controlador de PS4

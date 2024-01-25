@@ -19,7 +19,8 @@ public class MovimientoCoche : MonoBehaviour
     public SliderController sliderController;
     private float velocidad;
     public ParticleSystem efectoColisionAmbulancia;
-
+    public GameObject GameOver;
+    public GameObject GameOver2;
     void Start()
     {
         // Encuentra el objeto que tiene el script SliderController
@@ -94,8 +95,11 @@ public class MovimientoCoche : MonoBehaviour
         if (collision.gameObject.tag == "CocheContrario")
         {
             // Detener el tiempo al colisionar con un coche en sentido contrario
-            Time.timeScale = 0f; 
+            GameOver.SetActive(true);
+            GameOver2.SetActive(true);
+            Time.timeScale = 0f;
             //poSAR UN BOOL IS DEAD a on hi ha s'update, que ho englobi tot perquè aqueí, en lloc de posar time.deltatime = 0 posis que es bool aquest sigui true, així es temps seguirà corrent
+            // Si el menú de pausa está inactivo, lo activa y pausa el tiempo
         }
     }
 
