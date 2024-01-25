@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CambioMusica : MonoBehaviour
 {
@@ -32,6 +33,16 @@ public class CambioMusica : MonoBehaviour
             // Cambia a la siguiente pista
             CambiarPistaSiguiente();
         }
+    }
+
+    public string ObtenerNombreCancionActual()
+    {
+        if (indiceActual >= 0 && indiceActual < pistasDeFondo.Count)
+        {
+            return pistasDeFondo[indiceActual].name;
+        }
+
+        return "Nombre de Canción No Disponible";
     }
 
     void CambiarPistaSiguiente()
