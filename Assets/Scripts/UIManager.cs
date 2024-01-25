@@ -43,6 +43,6 @@ public class UIManager : MonoBehaviour
     // Actualiza el contador de tiempo en la interfaz de usuario
     void ActualizarContadorTiempo()
     {
-        contadorTiempoText.text = "Tiempo: " + Mathf.Floor(tiempoTranscurrido).ToString();
+        contadorTiempoText.text = "Km/h " + Mathf.Floor(tiempoTranscurrido).ToString();
     }
 }

@@ -26,7 +26,7 @@ public class MusicUI : MonoBehaviour
         // Actualiza el texto con el nombre de la canción actual
         if (textoNombreCancion != null && cambioMusica != null)
         {
-            textoNombreCancion.text = "Now Playing: " + cambioMusica.ObtenerNombreCancionActual();
+            textoNombreCancion.text = "Listening " + cambioMusica.ObtenerNombreCancionActual();
         }
     }
 }
