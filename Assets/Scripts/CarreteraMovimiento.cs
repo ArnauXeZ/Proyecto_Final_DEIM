@@ -88,7 +88,7 @@ public class CarreteraMovimiento : MonoBehaviour
     public float ObtenerVelocidadCarretera()
     {
         // Incrementa la velocidad base en función del tiempo
-        return velocidadBase + temporizador * 0.3f;
+        return velocidadBase + temporizador * 0.5f;
     }
 
 }
