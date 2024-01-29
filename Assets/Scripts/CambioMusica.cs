@@ -28,7 +28,7 @@ public class CambioMusica : MonoBehaviour
     void Update()
     {
         // Detecta si se presiona el botón cuadrado en el controlador de PS4
-        if (Input.GetButtonDown("Cuadrado"))
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetButtonDown("Cuadrado"))
         {
             // Cambia a la siguiente pista
             CambiarPistaSiguiente();

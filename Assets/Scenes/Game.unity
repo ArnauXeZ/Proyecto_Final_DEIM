@@ -2747,6 +2747,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 949116b37ca51a2419dfb18a36d5b31c, type: 3}
   - {fileID: 8300000, guid: 3d783f211106ec34d8ca89caaec6c077, type: 3}
   - {fileID: 8300000, guid: 54f936090f561c6458f6169d235e31ac, type: 3}
+  - {fileID: 8300000, guid: d660aa0347988cc49b7f7cda89df5ad2, type: 3}
 --- !u!82 &275909504
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4885,7 +4886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &456279280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4922,7 +4923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.59607846}
+  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5632,7 +5633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9716981, g: 0.93013203, b: 0.068752214, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7895,7 +7896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9622642, g: 0.6941702, b: 0.05900679, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
