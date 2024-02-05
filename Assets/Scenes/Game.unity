@@ -11066,6 +11066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Game: MainMenu
   Reiniciar: Game
+  Options: NombreDeTuEscena
+  Menu: NombreDeTuEscena
 --- !u!4 &1164908274
 Transform:
   m_ObjectHideFlags: 0

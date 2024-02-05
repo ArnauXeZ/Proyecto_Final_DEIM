@@ -12,6 +12,7 @@ public class SpaceShipMovment : MonoBehaviour
     private float velocidad;
     public GameObject m_shotPrefab;
     public Transform m_muzzle;
+    public Transform m_muzzle2;
     void Update()
     {
         float movimientoHorizontal = Input.GetAxis("Horizontal");
@@ -41,9 +42,15 @@ public class SpaceShipMovment : MonoBehaviour
         // Simulación de fricción
         velocidad *= Mathf.Pow(1 - friccion * Time.deltaTime, 2);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Disparo"))
         {
             GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle.position, m_muzzle.rotation) as GameObject;
+            GameObject.Destroy(go, 3f);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Disparo"))
+        {
+            GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle2.position, m_muzzle.rotation) as GameObject;
             GameObject.Destroy(go, 3f);
         }
     }
