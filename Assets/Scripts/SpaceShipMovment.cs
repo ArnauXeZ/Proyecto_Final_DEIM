@@ -24,7 +24,7 @@ public class SpaceShipMovment : MonoBehaviour
         velocidad = Mathf.Clamp(velocidad, -velocidadMaxima, velocidadMaxima);
         transform.Translate(Vector3.right * velocidad * Time.deltaTime);
 
-        // Restringe la posición lateral del coche para evitar salir del mapa
+        // Restringe la posición lateral de la nave para evitar salir del mapa
         float nuevaPosicionX = Mathf.Clamp(transform.position.x, -45f, 45f);
         transform.position = new Vector3(nuevaPosicionX, transform.position.y, transform.position.z);
 
@@ -37,13 +37,14 @@ public class SpaceShipMovment : MonoBehaviour
             velocidad -= frenadoSuave;
         }
 
-        // Rotación del coche
+        // Rotación de la navee
         float inclinacion = -movimientoHorizontal * inclinacionMaxima;
         transform.rotation = Quaternion.Euler(0, 0, inclinacion);
 
         // Simulación de fricción
         velocidad *= Mathf.Pow(1 - friccion * Time.deltaTime, 2);
 
+        //Disparar
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Disparo"))
         {
             ControladorSonido.Instance.EjecutarSonido(blast);

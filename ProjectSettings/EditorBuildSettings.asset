@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/OvertakingTraffic/MainMenu.unity
     guid: 367930007379c954b9042a82e5ea9fdf
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/OvertakingTraffic/Game.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Options.unity
+    path: Assets/Scenes/OvertakingTraffic/Options.unity
     guid: 5c056c897082aad46912ff83116e3b72
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 10ddc138085c52c43bed7b7b7a8f93ca,

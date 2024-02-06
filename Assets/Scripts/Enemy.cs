@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private AudioClip explosion;
 
+
+
     public void SetWaveManager(WaveManager manager)
     {
         waveManager = manager;
@@ -17,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        
         ControladorSonido.Instance.EjecutarSonido(explosion);
         // Instanciar el efecto de partículas en la posición del enemigo
         Instantiate(particlesPrefab, transform.position, Quaternion.identity);
@@ -25,7 +29,10 @@ public class Enemy : MonoBehaviour
         {
             waveManager.EnemyDied();
         }
+
+       
     }
+
 }
 
 
