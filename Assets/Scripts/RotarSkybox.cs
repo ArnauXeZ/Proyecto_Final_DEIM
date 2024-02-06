@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class RotarSkybox : MonoBehaviour
 {
-    public float velocidadRotacion = 1f; // Ajusta la velocidad de rotación según tus preferencias
+    public float rotationSpeed = 1f; // Ajusta la velocidad de rotación según tus preferencias
 
     void Update()
     {
-        // Obtén el material del skybox
-        Material skyboxMaterial = RenderSettings.skybox;
+        // Obtenemos la rotación actual del skybox
+        float rotation = RenderSettings.skybox.GetFloat("_Rotation");
 
-        // Calcula la nueva rotación del skybox
-        float nuevaRotacion = skyboxMaterial.GetFloat("_Rotation") + velocidadRotacion * Time.deltaTime;
+        // Calculamos la nueva rotación en el eje horizontal
+        rotation += Time.deltaTime * rotationSpeed;
+        rotation %= 360.0f; // Aseguramos que la rotación esté en el rango de 0 a 360 grados
 
-        // Aplica la nueva rotación al material del skybox
-        skyboxMaterial.SetFloat("_Rotation", nuevaRotacion);
+        // Establecemos la nueva rotación del skybox
+        RenderSettings.skybox.SetFloat("_Rotation", rotation);
     }
 }

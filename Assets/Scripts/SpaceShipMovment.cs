@@ -13,6 +13,8 @@ public class SpaceShipMovment : MonoBehaviour
     public GameObject m_shotPrefab;
     public Transform m_muzzle;
     public Transform m_muzzle2;
+    [SerializeField] private AudioClip blast;
+
     void Update()
     {
         float movimientoHorizontal = Input.GetAxis("Horizontal");
@@ -44,6 +46,7 @@ public class SpaceShipMovment : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Disparo"))
         {
+            ControladorSonido.Instance.EjecutarSonido(blast);
             GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle.position, m_muzzle.rotation) as GameObject;
             GameObject.Destroy(go, 3f);
         }

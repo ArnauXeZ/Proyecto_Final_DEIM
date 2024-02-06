@@ -176,4 +176,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlesPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312,
     type: 3}
-  playerAudioSource: {fileID: 0}
+  explosion: {fileID: 8300000, guid: 870599cb4d6b5c0438bbcb3012e93a01, type: 3}

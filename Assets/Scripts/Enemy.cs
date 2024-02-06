@@ -5,9 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject particlesPrefab; // Prefab del efecto de partículas
-    public AudioSource playerAudioSource; // Referencia al componente AudioSource del jugador
 
     private WaveManager waveManager;
+
+    [SerializeField] private AudioClip explosion;
 
     public void SetWaveManager(WaveManager manager)
     {
@@ -16,12 +17,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Reproducir el sonido del jugador si está asignado
-        if (playerAudioSource != null)
-        {
-            playerAudioSource.Play();
-        }
-
+        ControladorSonido.Instance.EjecutarSonido(explosion);
         // Instanciar el efecto de partículas en la posición del enemigo
         Instantiate(particlesPrefab, transform.position, Quaternion.identity);
 
