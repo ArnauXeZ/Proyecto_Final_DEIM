@@ -12,7 +12,7 @@ public class SpaceShipEnemyMovment : MonoBehaviour
         transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
 
         // Si el coche está fuera de la pantalla, destrúyelo
-        if (transform.position.z < -45f)
+        if (transform.position.z < -25f)
         {
             Destroy(gameObject);
         }

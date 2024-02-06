@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
 
     private float currentHealth; // Vida actual del jugador
 
+    // Diccionario para llevar el control de si cada enemigo ha aplicado daño al jugador
+    private Dictionary<GameObject, bool> enemyDamageApplied = new Dictionary<GameObject, bool>();
+
     void Start()
     {
         // Inicializar la vida del jugador
@@ -24,11 +27,11 @@ public class PlayerHealth : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("SpaceShipEnemy");
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.transform.position.z <= damageThreshold)
+            if (enemy.transform.position.z <= damageThreshold && !enemyDamageApplied.ContainsKey(enemy))
             {
                 // Aplicar daño al jugador
                 TakeDamage(damageAmount);
-                break; // Salir del bucle después de aplicar el daño una vez
+                enemyDamageApplied.Add(enemy, true); // Marcar el enemigo como que ya ha aplicado daño
             }
         }
     }
@@ -54,5 +57,6 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 }
+
 
 

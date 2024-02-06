@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000702988, g: 0.004980216, b: 0.021344425, a: 1}
+  m_IndirectSpecularColor: {r: 0.000704431, g: 0.004983497, b: 0.021352783, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 1378548622}
-  damageThreshold: -25
+  damageThreshold: -24
   damageAmount: 5
 --- !u!1 &185812689
 GameObject:
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
