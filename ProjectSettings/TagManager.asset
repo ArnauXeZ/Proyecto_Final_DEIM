@@ -10,6 +10,7 @@ TagManager:
   - SliderController
   - FxTemporaire
   - Enemy
+  - SpaceShipEnemy
   layers:
   - Default
   - TransparentFX
