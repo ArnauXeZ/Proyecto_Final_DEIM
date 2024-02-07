@@ -11,7 +11,11 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private AudioClip explosion;
 
-
+    // Vibración del mando
+    private Gamepad gamepad;
+    private bool vibrationStarted = false;
+    private float vibrationDuration = 0.009f;
+    private float vibrationIntensity = 0.3f;
 
     public void SetWaveManager(WaveManager manager)
     {
@@ -29,8 +33,28 @@ public class Enemy : MonoBehaviour
         {
             waveManager.EnemyDied();
         }
+        
+        // Hacer vibrar el mando
+        if (Gamepad.current != null)
+        {
+            if (!vibrationStarted)
+            {
+                vibrationStarted = true;
+                gamepad = Gamepad.current;
+                gamepad.SetMotorSpeeds(vibrationIntensity, vibrationIntensity);
+                Invoke("StopVibration", vibrationDuration);
+            }
+        }
 
-       
+    }
+
+    private void StopVibration()
+    {
+        if (gamepad != null)
+        {
+            gamepad.SetMotorSpeeds(0, 0);
+            vibrationStarted = false;
+        }
     }
 
 }
