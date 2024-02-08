@@ -58,4 +58,13 @@ public class SpaceShipMovment : MonoBehaviour
             GameObject.Destroy(go, 3f);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "SpaceShipEnemy")
+        {
+
+            Time.timeScale = 0f;
+        }
+    }
 }
