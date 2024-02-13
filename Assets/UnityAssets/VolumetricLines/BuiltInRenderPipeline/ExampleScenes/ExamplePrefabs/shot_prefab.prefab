@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 10825254}
   - component: {fileID: 4507613154108236736}
   - component: {fileID: 2726210503856518278}
-  - component: {fileID: 1669750996718468931}
+  - component: {fileID: -8617199082921565810}
   m_Layer: 0
   m_Name: shot_prefab
   m_TagString: Enemy
@@ -226,7 +226,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.6, y: 6.6, z: 56.6}
   m_Center: {x: 0, y: 0, z: 25}
---- !u!114 &1669750996718468931
+--- !u!114 &-8617199082921565810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

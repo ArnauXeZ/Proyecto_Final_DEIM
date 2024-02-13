@@ -115,8 +115,11 @@ public class MovimientoCoche : MonoBehaviour
             {
                 efectoColisionAmbulancia.Play();
             }
+            // Llamar al script de control de vibración
+            FindObjectOfType<PruebaMando>().StartCoroutine("Vibracion");
             // Destruye la ambulancia al colisionar
             Destroy(other.gameObject);
+            
         }
     }
 }
