@@ -4,12 +4,14 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject powerUpPrefab; // Prefab del Power Up
     public Transform spawnPoint;
     public int startingNumberOfEnemies = 10; // Número inicial de enemigos por fila.
     public int incrementPerWave = 2; // Incremento de filas por oleada.
     public float rowSpacing = 2f; // Espaciado entre las filas de enemigos.
     public float enemySpacing = 2f; // Espaciado entre los enemigos en una fila.
     public float timeBetweenWaves = 5f;
+    public float powerUpChance = 0.2f; // Probabilidad de que aparezca un Power Up (20%)
     private int currentNumberOfRows; // Número actual de filas de enemigos por oleada.
     private int enemiesRemaining;
 
@@ -44,6 +46,17 @@ public class WaveManager : MonoBehaviour
             zOffset -= rowSpacing; // Decrementamos el offset en el eje Z para la próxima fila.
         }
 
+        // Generar un número aleatorio entre 0 y 1
+        float randomValue = Random.value;
+
+        // Comprobar si el número aleatorio es menor o igual que la probabilidad del Power Up
+        if (randomValue <= powerUpChance)
+        {
+            // Instanciar el Power Up en una posición aleatoria dentro de la zona de juego
+            Vector3 powerUpPosition = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(-10f, 10f)); // Modifica los valores según tus necesidades
+            Instantiate(powerUpPrefab, powerUpPosition, Quaternion.identity);
+        }
+
         yield return new WaitUntil(() => enemiesRemaining == 0);
 
         yield return new WaitForSeconds(timeBetweenWaves);
@@ -58,6 +71,7 @@ public class WaveManager : MonoBehaviour
         enemiesRemaining--;
     }
 }
+
 
 
 
