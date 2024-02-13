@@ -45,14 +45,14 @@ public class SpaceShipMovment : MonoBehaviour
         velocidad *= Mathf.Pow(1 - friccion * Time.deltaTime, 2);
 
         //Disparar
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Disparo"))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cuadrado"))
         {
             ControladorSonido.Instance.EjecutarSonido(blast);
             GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle.position, m_muzzle.rotation) as GameObject;
             GameObject.Destroy(go, 3f);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Disparo"))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Cuadrado"))
         {
             GameObject go = GameObject.Instantiate(m_shotPrefab, m_muzzle2.position, m_muzzle.rotation) as GameObject;
             GameObject.Destroy(go, 3f);

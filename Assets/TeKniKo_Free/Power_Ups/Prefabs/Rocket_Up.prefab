@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 5200809663670409446}
   - component: {fileID: 8054700699963796524}
   - component: {fileID: -8256898466973346343}
-  - component: {fileID: -7858940092648131146}
-  - component: {fileID: -6169950620571218808}
+  - component: {fileID: 2909813815352610762}
+  - component: {fileID: 7069566193664570478}
+  - component: {fileID: 4661935396292998024}
+  - component: {fileID: 3895264733254380206}
   m_Layer: 0
   m_Name: Rocket_Up
   m_TagString: SpaceShipEnemy
@@ -99,7 +101,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e070c2b0f437964093063009bab703d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7858940092648131146
+--- !u!135 &2909813815352610762
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415248498332601849}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2.9456563
+  m_Center: {x: 0.019302845, y: 0.013469219, z: -0.012485027}
+--- !u!54 &7069566193664570478
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415248498332601849}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4661935396292998024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +158,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8415248498332601849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4c2aa5646a3f7a4bbc0d4c924c2d043, type: 3}
+  m_Script: {fileID: 11500000, guid: 188a358bcf0999545aef8767e2b9d46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 15
---- !u!114 &-6169950620571218808
+--- !u!114 &3895264733254380206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8415248498332601849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab614c44bf997d2468088e91085bb196, type: 3}
+  m_Script: {fileID: 11500000, guid: 8db2181446c48f94a876b02f1d83b0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   particlesPrefab: {fileID: 1141330259687333427, guid: 6718dc24203da53468af9ada8fef7d6d,
@@ -195,7 +245,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5773399876510048642, guid: 84221c5d9e2cf0b488ddb37026596b45, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

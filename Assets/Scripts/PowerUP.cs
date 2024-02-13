@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Enemy : MonoBehaviour
+public class PowerUP : MonoBehaviour
 {
     public GameObject particlesPrefab; // Prefab del efecto de partículas
     private WaveManager waveManager;
     [SerializeField] private AudioClip explosion;
-    
- 
+
+
 
 
     public void SetWaveManager(WaveManager manager)
@@ -19,14 +17,14 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+
         ControladorSonido.Instance.EjecutarSonido(explosion);
         // Instanciar el efecto de partículas en la posición del enemigo
         Instantiate(particlesPrefab, transform.position, Quaternion.identity);
 
         if (waveManager != null)
         {
-            waveManager.EnemyDied();
+            waveManager.PowerUpCollected();
         }
 
         // Llamar al script de control de vibración
@@ -34,15 +32,3 @@ public class Enemy : MonoBehaviour
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
