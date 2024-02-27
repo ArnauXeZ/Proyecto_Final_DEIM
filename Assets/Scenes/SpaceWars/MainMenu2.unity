@@ -9537,14 +9537,18 @@ PrefabInstance:
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 406588938}
+      objectReference: {fileID: 1481334764}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Quit
+      value: CargarMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadScene, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 05a81c3d5091440058129444d28322f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9647,7 +9651,9 @@ MonoBehaviour:
   Game: Game2
   Reiniciar: NombreDeTuEscena
   Options: NombreDeTuEscena
-  Menu: MainMenu
+  Menu: ArcadeHUB
+  Hub: NombreDeTuEscena
+  VideoIntro: NombreDeTuEscena
 --- !u!4 &1481334765
 Transform:
   m_ObjectHideFlags: 0
@@ -10904,5 +10910,5 @@ SceneRoots:
   - {fileID: 803252315}
   - {fileID: 457854068}
   - {fileID: 220024591}
-  - {fileID: 1481334765}
   - {fileID: 995396226}
+  - {fileID: 1481334765}
