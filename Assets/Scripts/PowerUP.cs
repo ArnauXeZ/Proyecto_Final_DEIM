@@ -10,14 +10,14 @@ public class PowerUP : MonoBehaviour
 
 
 
-    public void SetWaveManager(WaveManager manager)
+    private void Start()
     {
-        waveManager = manager;
+        waveManager = FindObjectOfType<WaveManager>();
     }
 
     private void OnDestroy()
     {
-
+        
         ControladorSonido.Instance.EjecutarSonido(explosion);
         // Instanciar el efecto de partículas en la posición del enemigo
         Instantiate(particlesPrefab, transform.position, Quaternion.identity);

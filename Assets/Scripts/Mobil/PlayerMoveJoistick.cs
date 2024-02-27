@@ -51,7 +51,7 @@ public class PlayerMoveJoistick : MonoBehaviour
         float movimientoHorizontal = Input.GetAxis("Horizontal");
 
         // Aceleración y movimiento lateral
-        velocidad += movimientoHorizontal * aceleracion * Time.deltaTime;
+        velocidad += horizontalMove * aceleracion * Time.deltaTime;
         velocidad = Mathf.Clamp(velocidad, -velocidadMaxima, velocidadMaxima);
         transform.Translate(Vector3.right * velocidad * Time.deltaTime);
 
@@ -62,14 +62,14 @@ public class PlayerMoveJoistick : MonoBehaviour
         transform.Translate(Vector3.right * velocidad * Time.deltaTime);
 
         // Frenado suave
-        if (movimientoHorizontal == 0)
+        if (horizontalMove == 0)
         {
             float frenadoSuave = Mathf.Sign(velocidad) * frenado * Time.deltaTime;
             velocidad -= frenadoSuave;
         }
 
         // Rotación del coche
-        float inclinacion = -movimientoHorizontal * inclinacionMaxima;
+        float inclinacion = -horizontalMove * inclinacionMaxima;
         transform.rotation = Quaternion.Euler(0, 0, inclinacion);
 
         // Simulación de fricción

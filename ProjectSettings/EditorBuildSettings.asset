@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/HubArcade/ArcadeHUB.unity
+    guid: c647c61e8f3819c41b3852ed1eac2eaa
+  - enabled: 1
     path: Assets/Scenes/OvertakingTraffic/MainMenu.unity
     guid: 367930007379c954b9042a82e5ea9fdf
   - enabled: 1
-    path: Assets/Scenes/OvertakingTraffic/Game.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/OvertakingTraffic/Game 1.unity
+    guid: c6f855192ac05bd4db30698918f6e6a8
   - enabled: 1
     path: Assets/Scenes/OvertakingTraffic/Options.unity
     guid: 5c056c897082aad46912ff83116e3b72

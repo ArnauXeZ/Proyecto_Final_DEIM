@@ -10,6 +10,7 @@ public class LoadScene : MonoBehaviour
     public string Reiniciar = "NombreDeTuEscena";
     public string Options = "NombreDeTuEscena";
     public string Menu = "NombreDeTuEscena";
+    public string Hub = "NombreDeTuEscena";
 
 
     // Método que se llama al presionar el botón de reproducción
@@ -32,5 +33,9 @@ public class LoadScene : MonoBehaviour
     public void CargarMenu()
     {
         SceneManager.LoadScene(Menu);
+    }
+    public void CargarHub()
+    {
+        SceneManager.LoadScene(Hub);
     }
 }
