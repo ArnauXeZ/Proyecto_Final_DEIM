@@ -33,6 +33,12 @@ public class WaveManager : MonoBehaviour
         enemiesRemaining = currentNumberOfRows * startingNumberOfEnemies;
         Debug.Log("Start enemies" + enemiesRemaining);
         powerUpsRemaining = Random.value <= powerUpChance ? currentNumberOfRows : 0; // Determinar si aparece un Power Up
+        if (currentNumberOfRows > 10)  // Verificar si la oleada actual es mayor que 10
+        {
+            // Cargar la escena adicional
+            SceneManager.LoadScene("WIN");
+            return;  // Salir del método para detener la generación de oleadas
+        }
         StartCoroutine(SpawnWave()); // Iniciar la corutina para generar la oleada
     }
 
@@ -98,7 +104,12 @@ public class WaveManager : MonoBehaviour
         Debug.Log("power up destroy");
     }
 
-   
+    public int GetCurrentWaveNumber()
+    {
+        return currentNumberOfRows;
+    }
+
+
 }
 
 

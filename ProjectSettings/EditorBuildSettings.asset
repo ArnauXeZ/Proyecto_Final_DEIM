@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver/GameOver 1.unity
     guid: 6b5772929dcc96b4d9e5b85f573eea73
+  - enabled: 1
+    path: Assets/Scenes/SpaceWars/Options 1.unity
+    guid: 4ab8992143d3f3745ae272bb4bf20adb
+  - enabled: 1
+    path: Assets/Scenes/SpaceWars/WIN.unity
+    guid: 28d87462e2d19a94c8dd2a1ce51fd244
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 10ddc138085c52c43bed7b7b7a8f93ca,
       type: 2}

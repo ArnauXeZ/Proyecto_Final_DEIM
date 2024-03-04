@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SliderController : MonoBehaviour
 {
     public Slider tiempoSlider;
     public float tiempoTotal = 60f; // Tiempo total en segundos
     private float tiempoRestante;
-    public GameObject GameOver2;
-    public GameObject GameOver;
+   
 
     void Start()
     {
@@ -28,8 +28,7 @@ public class SliderController : MonoBehaviour
         if (tiempoRestante <= 0f)
         {
             // Detén el tiempo del juego
-            GameOver.SetActive(true);
-            GameOver2.SetActive(true);
+            SceneManager.LoadScene("GameOver 1");
             Time.timeScale = 0f;
             // Puedes agregar aquí cualquier acción adicional cuando el tiempo llega a cero
         }
