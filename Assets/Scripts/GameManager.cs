@@ -3,9 +3,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private float tiempoTranscurrido = 0f;
-
+  
     void Update()
     {
+        
         // Incrementar el tiempo transcurrido
         tiempoTranscurrido += Time.deltaTime;
 

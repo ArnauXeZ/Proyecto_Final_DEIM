@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuPausa : MonoBehaviour
 {
     public GameObject menuPausa;
-
+    public BackgroundMusic backgroundMusic;
     public void Start()
     {
         Time.timeScale = 1f;
@@ -16,23 +16,27 @@ public class MenuPausa : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Options"))
         {
             // Llama a la función que maneja la pausa
-            ManejarPausa();
+            ToggleMenuPausa();
         }
     }
 
-    void ManejarPausa()
+    public void ToggleMenuPausa()
     {
-        // Si el menú de pausa está activo, lo desactiva y reanuda el tiempo
-        if (menuPausa.activeSelf)
+        bool menuActivo = !menuPausa.activeSelf;
+        menuPausa.SetActive(menuActivo);
+
+        // Pausar o reanudar la música según el estado del menú
+        if (menuActivo)
         {
-            menuPausa.SetActive(false);
-            Time.timeScale = 1f;
+            // Pausar la música cuando se activa el menú de pausa
+            backgroundMusic.PausarMusica();
+            Time.timeScale = 0f; // Pausar el juego
         }
         else
         {
-            // Si el menú de pausa está inactivo, lo activa y pausa el tiempo
-            menuPausa.SetActive(true);
-            Time.timeScale = 0f;
+            // Reanudar la música cuando se desactiva el menú de pausa
+            backgroundMusic.ReanudarMusica();
+            Time.timeScale = 1f; // Reanudar el juego
         }
     }
 }

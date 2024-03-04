@@ -5,11 +5,6 @@ using UnityEngine.InputSystem;
 
 public class GameOver : MonoBehaviour
 {
-    private Gamepad gamepad;
-    void Start()
-    {
-        gamepad.SetMotorSpeeds(0, 0);
-    }
-
+    
     
 }
