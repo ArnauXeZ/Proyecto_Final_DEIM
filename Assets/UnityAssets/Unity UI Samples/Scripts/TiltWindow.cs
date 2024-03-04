@@ -12,9 +12,10 @@ public class TiltWindow : MonoBehaviour
 	{
 		mTrans = transform;
 		mStart = mTrans.localRotation;
-	}
-
-	void Update ()
+        Time.timeScale = 1f;
+    }
+    
+    void Update ()
 	{
 		Vector3 pos = Input.mousePosition;
 

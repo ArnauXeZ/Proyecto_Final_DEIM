@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Enemy : MonoBehaviour
@@ -19,18 +20,21 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        
-        ControladorSonido.Instance.EjecutarSonido(explosion);
-        // Instanciar el efecto de partículas en la posición del enemigo
-        Instantiate(particlesPrefab, transform.position, Quaternion.identity);
-
-        if (waveManager != null)
+        if (SceneManager.GetActiveScene().buildIndex == 5)
         {
-            waveManager.EnemyDied();
-        }
+            ControladorSonido.Instance.EjecutarSonido(explosion);
+            // Instanciar el efecto de partículas en la posición del enemigo
+            Instantiate(particlesPrefab, transform.position, Quaternion.identity);
 
-        // Llamar al script de control de vibración
-        FindObjectOfType<PruebaMando>().StartCoroutine("Vibracion");
+            if (waveManager != null)
+            {
+                waveManager.EnemyDied();
+            }
+
+            // Llamar al script de control de vibración
+            FindObjectOfType<PruebaMando>().StartCoroutine("Vibracion");
+        }    
+        
     }
 
 }

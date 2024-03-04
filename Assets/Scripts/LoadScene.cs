@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadScene : MonoBehaviour
 {
@@ -48,5 +49,11 @@ public class LoadScene : MonoBehaviour
     public void ResetPref()
     {
         PlayerPrefs.DeleteAll();
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Saliendo del juego...");
+        Application.Quit(); // Cierra la aplicación
     }
 }
