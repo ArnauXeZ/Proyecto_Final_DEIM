@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpaceShipMovment : MonoBehaviour
 {
@@ -63,7 +64,7 @@ public class SpaceShipMovment : MonoBehaviour
     {
         if (collision.gameObject.tag == "SpaceShipEnemy")
         {
-
+            SceneManager.LoadScene("GameOver");
             Time.timeScale = 0f;
         }
     }

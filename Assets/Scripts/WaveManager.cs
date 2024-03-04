@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -96,6 +97,8 @@ public class WaveManager : MonoBehaviour
         powerUpsRemaining--; // Reducir el contador de Power Ups restantes
         Debug.Log("power up destroy");
     }
+
+   
 }
 
 

@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public Slider healthSlider; // Referencia al Slider que representa la vida del jugador
     public float damageThreshold = -25f; // Posición Z en la que se aplica daño al jugador
     public float damageAmount = 10f; // Cantidad de daño que se aplica al jugador
+    public GameObject menuPause;
+    private string Death = "GameOver";
 
     private float currentHealth; // Vida actual del jugador
 
@@ -46,7 +49,7 @@ public class PlayerHealth : MonoBehaviour
         // Comprobar si el jugador ha muerto
         if (currentHealth <= 0f)
         {
-            // Aquí puedes hacer algo cuando el jugador muere, como reiniciar el nivel o mostrar un mensaje de game over
+            GameOver();
             Debug.Log("¡El jugador ha muerto!");
         }
     }
@@ -56,7 +59,10 @@ public class PlayerHealth : MonoBehaviour
         // Actualizar el valor del Slider para reflejar la vida actual del jugador
         healthSlider.value = currentHealth;
     }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(Death);
+    }
+
 }
-
-
-

@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
                 waveManager.EnemyDied();
             }
 
+
             // Llamar al script de control de vibración
             FindObjectOfType<PruebaMando>().StartCoroutine("Vibracion");
         }    
